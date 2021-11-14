@@ -1,0 +1,62 @@
+class Student{
+  String? name;
+  String? className;
+  var age;
+  
+  // return_type get _getname{
+//   return name;
+// }
+  
+  
+  
+  
+// get always return data member of class
+// set always put given value into instance variable
+// how to access get :: ob.getname and how to access set ::ob.setnmae ;  
+//  int get valuek{
+//     return age;
+//   }
+  
+//   set pk(int ip){
+//     age=ip;
+//   }
+  //defuatl constructor is required to get instance of any class
+  Student({this.name,this.className,this.age});
+  
+  // this is name constructor that get the value's from Map and put in local instace v
+  //variable 
+  Student.formMap(Map r){
+    name=r["name"];
+    className=r["className"];
+    age=r["age"];
+  }
+  //this  is function use default constructor ot return a instance of Student class
+  
+  toMap(){
+    return Student(name:this.name,className:this.className,age:this.age);
+  }
+  
+  // Note :: any constructor can not return ;
+   }
+  
+  
+
+
+
+void main()
+{
+  List instanceList=[];
+  
+  var ob=Student.formMap({
+    "name":"vaibhav",
+    "age":12,
+    "className":"B.tech",
+      
+      
+  });
+  var i=ob.toMap();
+  instanceList.add(i);
+  print(instanceList);
+  
+  
+}
